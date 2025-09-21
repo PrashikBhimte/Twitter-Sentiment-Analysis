@@ -98,7 +98,7 @@ classify-tweet "What a fantastic day!" -m bert_logistic_reg_model
 
 The project also includes a simple landing page built with React and Tailwind CSS. This page provides an overview of the project, its features, usage instructions, and a detailed project report.
 
-**Live Demo:** [Link to be added after deployment]
+**Live Demo:** [[Link]](https://twitter-sentiment-analysis-pi.vercel.app/)
 
 ### Landing Page Setup and Run
 
