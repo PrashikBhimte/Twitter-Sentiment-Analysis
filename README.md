@@ -9,14 +9,16 @@ This project aims to classify the sentiment of tweets into three categories: Pos
 ├───.python-version
 ├───README.md
 ├───requirements.txt
-├───model_training/
+├───landing_page/             # Frontend for the project
+├───model_training/           # Jupyter Notebook for model training
 │   ├───main.ipynb
 │   └───sentimentdataset.csv
-├───trained_models/
+├───trained_models/           # Trained sentiment analysis models
 │   ├───bert_logistic_reg_model.joblib
 │   ├───logistic_reg_model.joblib
 │   └───tfidf_vectorizer.joblib
-└───venv/
+├───tweet_classifier_cli/     # Command-line interface tool
+└───venv/                     # Python virtual environment
 ```
 
 ## Files
@@ -52,9 +54,71 @@ This project aims to classify the sentiment of tweets into three categories: Pos
     pip install -r requirements.txt
     ```
 
-## Usage
+## CLI Tool: Tweet Classifier
 
-To use the trained models for sentiment prediction, you can load the saved models and the TF-IDF vectorizer in a Python script. Here is an example of how to predict the sentiment of a new tweet using the Logistic Regression model:
+This project includes a command-line interface (CLI) tool to classify tweets using the pre-trained sentiment analysis models.
+
+### CLI Installation
+
+1.  Navigate to the `tweet_classifier_cli` directory:
+
+    ```bash
+    cd tweet_classifier_cli
+    ```
+
+2.  Install the package:
+
+    ```bash
+    pip install .
+    ```
+
+    This will install all necessary dependencies and make the `classify-tweet` command available in your terminal.
+
+### CLI Usage
+
+To classify a tweet, use the `classify-tweet` command followed by the tweet text. You can optionally specify which model to use.
+
+#### Basic Usage (using default model `bert_logistic_reg_model`)
+
+```bash
+classify-tweet "I love this new product!"
+```
+
+#### Specifying a Model
+
+You can choose between `bert_logistic_reg_model` and `logistic_reg_model` using the `--model` or `-m` option.
+
+```bash
+classify-tweet "This is a terrible movie." --model logistic_reg_model
+# or
+classify-tweet "What a fantastic day!" -m bert_logistic_reg_model
+```
+
+## Landing Page
+
+The project also includes a simple landing page built with React and Tailwind CSS. This page provides an overview of the project, its features, usage instructions, and a detailed project report.
+
+**Live Demo:** [Link to be added after deployment]
+
+### Landing Page Setup and Run
+
+1.  Navigate to the `landing_page` directory:
+    ```bash
+    cd landing_page
+    ```
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+3.  Start the development server:
+    ```bash
+    npm run dev
+    ```
+    The application will be accessible in your browser, usually at `http://localhost:5173`.
+
+## Usage (Python Script)
+
+To use the trained models for sentiment prediction in a Python script, you can load the saved models and the TF-IDF vectorizer. Here is an example of how to predict the sentiment of a new tweet using the Logistic Regression model:
 
 ```python
 import joblib
