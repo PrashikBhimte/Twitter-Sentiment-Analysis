@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+src/tweet_classifier.egg-info/PKG-INFO
+src/tweet_classifier.egg-info/SOURCES.txt
+src/tweet_classifier.egg-info/dependency_links.txt
+src/tweet_classifier.egg-info/entry_points.txt
+src/tweet_classifier.egg-info/requires.txt
+src/tweet_classifier.egg-info/top_level.txt
+src/tweet_classifier_cli/__init__.py
+src/tweet_classifier_cli/__main__.py
+src/tweet_classifier_cli/predictor.py

@@ -1,0 +1,2 @@
+[console_scripts]
+classify-tweet = tweet_classifier_cli.__main__:cli
